@@ -20,6 +20,8 @@ class BoolformerLayer(layers.Layer):
 # Positional encoding for transformer model
 def positional_encoding(seq_length, d_model):
     position = tf.range(seq_length)[:, tf.newaxis]
+    # Cast position to float32 here
+    position = tf.cast(position, tf.float32)
     div_term = tf.exp(tf.range(0, d_model, 2) * -(tf.math.log(10000.0) / d_model))
     pos_encoding = position * div_term
     pos_encoding[:, 0::2] = tf.sin(pos_encoding[:, 0::2])
