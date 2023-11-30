@@ -1,5 +1,5 @@
 from tensorflow import keras
-from tensorflow.keras import layers, optimizers
+from keras import layers, optimizers
 import tensorflow as tf
 
 # Custom layer to process boolean logic
